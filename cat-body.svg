@@ -1,0 +1,22 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a4f54"/>
+      <stop offset="100%" stop-color="#2c3034"/>
+    </linearGradient>
+  </defs>
+  <!-- headlight housing -->
+  <path d="M40 80 Q40 60 64 56 L138 50 Q160 50 160 74 L158 124 Q156 148 132 150 L60 152 Q40 150 40 128 Z"
+        fill="url(#bodyGrad)" stroke="#52585d" stroke-width="2"/>
+  <!-- inner lens -->
+  <path d="M58 84 Q58 70 76 68 L132 64 Q146 64 146 80 L145 118 Q144 134 128 136 L70 138 Q58 136 58 120 Z"
+        fill="#1c1f22" stroke="#3a3f44" stroke-width="1.5"/>
+  <!-- light beam highlight -->
+  <ellipse cx="100" cy="100" rx="38" ry="28" fill="#e8a33d" opacity="0.85"/>
+  <ellipse cx="92" cy="92" rx="14" ry="10" fill="#fceec8" opacity="0.9"/>
+  <!-- reflector lines -->
+  <g stroke="#0f1113" stroke-width="2" opacity="0.6">
+    <line x1="64" y1="80" x2="140" y2="80"/>
+    <line x1="64" y1="120" x2="140" y2="120"/>
+  </g>
+</svg>

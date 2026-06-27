@@ -1,0 +1,25 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="filterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8a33d"/>
+      <stop offset="100%" stop-color="#c9842a"/>
+    </linearGradient>
+  </defs>
+  <!-- filter body -->
+  <rect x="62" y="44" width="76" height="112" rx="8" fill="url(#filterGrad)" stroke="#3a3f44" stroke-width="2"/>
+  <!-- pleated texture lines -->
+  <g stroke="#9c6b1f" stroke-width="2" opacity="0.6">
+    <line x1="74" y1="50" x2="74" y2="150"/>
+    <line x1="86" y1="50" x2="86" y2="150"/>
+    <line x1="98" y1="50" x2="98" y2="150"/>
+    <line x1="110" y1="50" x2="110" y2="150"/>
+    <line x1="122" y1="50" x2="122" y2="150"/>
+  </g>
+  <!-- top cap -->
+  <rect x="56" y="36" width="88" height="16" rx="6" fill="#2c3034" stroke="#52585d" stroke-width="2"/>
+  <!-- bottom cap -->
+  <rect x="56" y="148" width="88" height="16" rx="6" fill="#2c3034" stroke="#52585d" stroke-width="2"/>
+  <!-- center hole -->
+  <circle cx="100" cy="44" r="9" fill="#1c1f22"/>
+  <circle cx="100" cy="156" r="9" fill="#1c1f22"/>
+</svg>

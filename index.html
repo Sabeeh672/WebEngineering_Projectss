@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IronGear Auto Parts | Genuine Car Spare Parts</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ TOP STRIP ============ -->
+<div class="top-strip">
+  <div class="container d-flex justify-content-between align-items-center">
+    <span><i class="bi bi-geo-alt-fill"></i> Shahrah-e-Faisal, Karachi</span>
+    <span class="d-none d-md-inline"><i class="bi bi-telephone-fill"></i> +92 300 1234567 &nbsp;|&nbsp; Mon–Sat, 9am–8pm</span>
+  </div>
+</div>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg sticky-top main-nav">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      <span class="brand-mark">IG</span>
+      <span class="brand-text">IRON<span class="accent-text">GEAR</span></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#shop">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <a class="btn cart-btn" href="#cart" role="button">
+            <i class="bi bi-cart3"></i> Cart <span class="badge rounded-pill cart-count" id="cartCount">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="container hero-content">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <p class="hero-eyebrow"><i class="bi bi-wrench-adjustable"></i> Genuine &amp; OEM Parts, Stocked Daily</p>
+        <h1 class="hero-title">Find the part.<br>Fix the car.<br><span class="accent-text">No detours.</span></h1>
+        <p class="hero-sub">Browse engine, brake, suspension and electrical parts for the most common makes on the road — search by name and get a price in seconds.</p>
+
+        <!-- SEARCH BAR -->
+        <div class="search-wrap">
+          <i class="bi bi-search search-icon"></i>
+          <input type="text" id="searchInput" class="form-control search-input" placeholder="Search e.g. brake pad, headlight, oil filter...">
+          <button class="btn clear-btn d-none" id="clearSearch" type="button"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <p class="search-hint" id="searchHint">Try: "filter", "pad", "battery", "bumper"</p>
+      </div>
+      <div class="col-lg-5 d-none d-lg-block text-center">
+        <div class="hero-badge-stack">
+          <div class="spec-tag spec-tag-1"><i class="bi bi-shield-check"></i> Warranty Included</div>
+          <div class="spec-tag spec-tag-2"><i class="bi bi-truck"></i> Same-day Dispatch</div>
+          <div class="spec-tag spec-tag-3"><i class="bi bi-patch-check"></i> Verified Fitment</div>
+          <i class="bi bi-gear-wide-connected hero-gear"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CATEGORY STRIP ============ -->
+<section class="category-strip">
+  <div class="container">
+    <div class="cat-scroll" id="categoryFilters">
+      <button class="cat-chip active" data-cat="all"><i class="bi bi-grid-3x3-gap-fill"></i> All Parts</button>
+      <button class="cat-chip" data-cat="engine"><i class="bi bi-gear-fill"></i> Engine</button>
+      <button class="cat-chip" data-cat="brake"><i class="bi bi-record-circle"></i> Brakes</button>
+      <button class="cat-chip" data-cat="suspension"><i class="bi bi-arrows-collapse"></i> Suspension</button>
+      <button class="cat-chip" data-cat="electrical"><i class="bi bi-lightning-charge-fill"></i> Electrical</button>
+      <button class="cat-chip" data-cat="body"><i class="bi bi-car-front-fill"></i> Body</button>
+      <button class="cat-chip" data-cat="filter"><i class="bi bi-funnel-fill"></i> Filters</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOP / PRODUCT GRID ============ -->
+<main class="shop-section" id="shop">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-baseline mb-4 flex-wrap gap-2">
+      <div>
+        <p class="section-eyebrow">Catalog</p>
+        <h2 class="section-title">Parts in Stock</h2>
+      </div>
+      <p class="result-count" id="resultCount">Showing all parts</p>
+    </div>
+
+    <div class="row g-4" id="productGrid"></div>
+
+    <!-- Empty state -->
+    <div class="empty-state d-none" id="emptyState">
+      <i class="bi bi-wrench"></i>
+      <h4>No parts match your search</h4>
+      <p>Try a different keyword or clear filters to see the full catalog.</p>
+      <button class="btn reset-btn" id="resetBtn">Reset search</button>
+    </div>
+  </div>
+</main>
+
+<!-- ============ TRUST STRIP ============ -->
+<section class="trust-strip">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-6 col-md-3">
+        <i class="bi bi-box-seam"></i>
+        <h6>1,200+ Parts</h6>
+        <p>In stock right now</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <i class="bi bi-award"></i>
+        <h6>OEM Grade</h6>
+        <p>Verified suppliers</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <i class="bi bi-arrow-repeat"></i>
+        <h6>7-Day Returns</h6>
+        <p>Hassle-free policy</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <i class="bi bi-headset"></i>
+        <h6>Real Support</h6>
+        <p>Talk to a mechanic</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <p class="section-eyebrow">Who we are</p>
+        <h2 class="section-title">Run by people who actually fix cars.</h2>
+        <p class="about-text">IronGear started as a small parts counter in a Karachi garage. We kept the same idea as we grew: stock what mechanics actually ask for, price it honestly, and don't make people guess if a part fits their car.</p>
+        <div class="row g-3 mt-3">
+          <div class="col-6">
+            <h3 class="stat-num">9<span class="accent-text">+</span></h3>
+            <p class="stat-label">Years trading parts</p>
+          </div>
+          <div class="col-6">
+            <h3 class="stat-num">40<span class="accent-text">+</span></h3>
+            <p class="stat-label">Car models covered</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="about-card">
+          <i class="bi bi-quote"></i>
+          <p>"We don't sell guesswork. If we're not sure a part fits your car, we'll tell you before you pay — not after you've fitted it."</p>
+          <span class="about-card-sign">— Counter policy, since day one</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / CTA ============ -->
+<section class="cta-section" id="contact">
+  <div class="container text-center">
+    <h2 class="cta-title">Can't find your part on the list?</h2>
+    <p class="cta-sub">Tell us your car's make, model and year — we'll check stock or source it within 48 hours.</p>
+    <a href="tel:+923001234567" class="btn cta-btn"><i class="bi bi-telephone-fill"></i> Call the Counter</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-md-4">
+        <a class="navbar-brand" href="#home">
+          <span class="brand-mark">IG</span>
+          <span class="brand-text">IRON<span class="accent-text">GEAR</span></span>
+        </a>
+        <p class="footer-tagline">Genuine spare parts, straight talk, fair prices.</p>
+      </div>
+      <div class="col-md-4">
+        <h6 class="footer-heading">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="#shop">Shop Parts</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6 class="footer-heading">Visit the Counter</h6>
+        <p class="footer-text"><i class="bi bi-geo-alt"></i> Shahrah-e-Faisal, Karachi, Pakistan</p>
+        <p class="footer-text"><i class="bi bi-envelope"></i> hello@irongear.parts</p>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <p class="footer-bottom">&copy; 2026 IronGear Auto Parts. Semester project demo — not a real store.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="products.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

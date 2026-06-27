@@ -1,0 +1,26 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shockGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3a3f44"/>
+      <stop offset="50%" stop-color="#4a4f54"/>
+      <stop offset="100%" stop-color="#3a3f44"/>
+    </linearGradient>
+  </defs>
+  <!-- coil spring -->
+  <g stroke="#e8a33d" stroke-width="5" fill="none" stroke-linecap="round">
+    <ellipse cx="100" cy="50" rx="34" ry="11"/>
+    <ellipse cx="100" cy="68" rx="34" ry="11"/>
+    <ellipse cx="100" cy="86" rx="34" ry="11"/>
+    <ellipse cx="100" cy="104" rx="34" ry="11"/>
+    <ellipse cx="100" cy="122" rx="34" ry="11"/>
+    <ellipse cx="100" cy="140" rx="34" ry="11"/>
+  </g>
+  <!-- shock rod through center -->
+  <rect x="94" y="30" width="12" height="60" rx="4" fill="url(#shockGrad)" stroke="#52585d" stroke-width="1.5"/>
+  <rect x="88" y="90" width="24" height="70" rx="6" fill="url(#shockGrad)" stroke="#52585d" stroke-width="1.5"/>
+  <!-- top mount -->
+  <rect x="78" y="18" width="44" height="16" rx="4" fill="#1c1f22" stroke="#52585d" stroke-width="2"/>
+  <!-- bottom mount -->
+  <rect x="80" y="158" width="40" height="16" rx="4" fill="#1c1f22" stroke="#52585d" stroke-width="2"/>
+  <circle cx="100" cy="166" r="5" fill="#3a3f44"/>
+</svg>
